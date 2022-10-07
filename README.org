@@ -1,0 +1,15 @@
+#+TITLE: Technical Wrtiting and Speaking in English
+
+* About
+This repository holds the material used for the course Technical Writing and
+Speaking in English, of the M1 MOSIG at University Grenoble Alpes.
+
+* Contributors
+- Danilo Carastan-Santos: https://www.linkedin.com/in/danilo-carastan-santos/ --  https://twitter.com/DCarastanSantos
+- Anderson Andrei da Silva: https://www.linkedin.com/in/anderson-andrei-da-silva-18888218b/
+- Enikő Kevi: https://www.linkedin.com/in/kevi-eniko/
+- Quentin Guilleautau https://www.linkedin.com/in/quentin-guilloteau-778a61151/
+
+* Repository Structure
+- slides: holds the presentations presented in the classes
+- exercises: holds the exercises performed during the classes
