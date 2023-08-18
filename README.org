@@ -2,14 +2,74 @@
 
 * About
 This repository holds the material used for the course Technical Writing and
-Speaking in English, of the M1 MOSIG at University Grenoble Alpes.
+Speaking in English of the [[https://mosig.imag.fr/][M1 MOSIG]] at [[https://im2ag.univ-grenoble-alpes.fr/en/][University Grenoble Alpes]].
 
 * Contributors
-- Danilo Carastan-Santos: https://www.linkedin.com/in/danilo-carastan-santos/ --  https://twitter.com/DCarastanSantos
-- Anderson Andrei da Silva: https://www.linkedin.com/in/anderson-andrei-da-silva-18888218b/
-- Enikő Kevi: https://www.linkedin.com/in/kevi-eniko/
-- Quentin Guilleautau https://www.linkedin.com/in/quentin-guilloteau-778a61151/
+- [[https://danilo-carastan-santos.github.io/][Danilo Carastan-Santos]]
+- [[https://www.linkedin.com/in/kevi-eniko/][Enikő Kevi]]
+- [[https://andersonandrei.github.io/][Anderson Andrei da Silva]]
+- [[https://guilloteauq.github.io/][Quentin Guilleautau]]
 
 * Repository Structure
-- slides: holds the presentations presented in the classes
-- exercises: holds the exercises performed during the classes
+- sessions: holds the course material for each year and city we ran the course.
+
+* Course objectives
+You will be training the following skills by following this course.
+
+** 1. Writing Basic skills
+      - *Clarity and Precision:* Develop the ability to convey complex scientific
+         concepts with clarity and precision.
+      - *Conciseness:* Develop the ability to convey ideas concisely without
+         sacrificing clarity. Practice eliminating unnecessary words and
+         redundancy.
+      - *Structure and Organization:* Understand the importance of
+         well-structured writing. Learn how to craft clear introductions,
+         well-organized main sections, and conclusive summaries.
+      - *Abstracts, Summaries and Titles:* Learn how to write effective
+        abstracts, summaries and titles that capture the essence of your work
+        and entice readers to explore further.
+      - *Audience Awareness:* Understand the importance of tailoring your
+        writing to your intended audience, whether it's fellow scientists,
+        educators, or the general public.
+
+** 2. Synthesis
+      - *Arguement Development:* Learn to formulate clear and concise narrative
+        that guides the reader through your work.
+      - *Critical Thinking:* Enhance your critical thinking skills by evaluating
+        and synthesizing existing research, identifying gaps, and formulating
+        evidence-based arguments.
+      - *Data Presentation:* Learn to effectively present and interpret data
+        through graphs, tables, and figures. Understand how visuals enhance the
+        understanding of scientific findings.
+
+** 3. Writing Tools
+      - *LaTeX:* Develop the ability to write documents using LaTeX, know how to
+        structure sections, to add figures and equations, and to add proper
+        citation.
+      - *Grammar tools and Writing Assistants:* Understand the advantages and
+        limitations of grammar tools and writing assistants (e.g., Gramarly,
+        LanguageTool, ChatGPT). Learn whether is appropriate or not to use these tools.
+      - *Presentation Tools:* Get an overal view of available presentation tools
+        (e.g., Prezi, Google Slides, Beamer).
+
+** 4. Hands-on Experience
+      - *Revision and Editing:* Gain experience in revising and editing. Recognize
+        the importance of multiple drafts and peer review in improving the
+        quality of your writing.
+      - *Collaborative Writing:* Gain experience in collaborative writing
+        through group projects, learning to work together to create a cohesive
+        and well-structured document.
+
+** 5. Speaking to an audience
+      - *Anxiety Management:* Be comfortable to presenting ideas and research
+        work to an audience
+      - *Bad Habits Awareness:* Know common speaking and presentation bad habits
+        and critital errors and how to avoid them.
+
+* References
+- Alley, M. (2018). The Craft of Scientific Writing. Springer New
+  York. https://doi.org/10.1007/978-1-4419-8288-9
+
+- Alley, M. (2013). The Craft of Scientific Presentations: Critical Steps to
+  Succeed and Critical Errors to Avoid. Springer New
+  York. https://doi.org/10.1007/978-1-4419-8279-7
