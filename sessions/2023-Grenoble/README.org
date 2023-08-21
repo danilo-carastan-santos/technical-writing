@@ -1,22 +1,19 @@
-#+TITLE: Technical Wrtiting and Speaking in English
+#+TITLE: Technical Wrtiting and Speaking in English - 2023-2024 session
 
 * About
-This repository holds the material used for the course Technical Writing and
-Speaking in English of the [[https://mosig.imag.fr/][M1 MOSIG]] at [[https://im2ag.univ-grenoble-alpes.fr/en/][University Grenoble Alpes]].
+This page holds the material used for the course Technical Writing and Speaking
+in English of the [[https://mosig.imag.fr/][M1 MOSIG]] at
+[[https://im2ag.univ-grenoble-alpes.fr/en/][University Grenoble Alpes]] during
+the 2023-2024 session.
 
-* Contributors
-- [[https://danilo-carastan-santos.github.io/][Danilo Carastan-Santos]]
-- [[https://www.linkedin.com/in/kevi-eniko/][Enikő Kevi]]
-- [[https://andersonandrei.github.io/][Anderson Andrei da Silva]]
-- [[https://guilloteauq.github.io/][Quentin Guilloteau]]
-
-* Repository Structure
-- sessions: holds the course material for each year and city we ran the course.
+* Teachers
+- [[https://danilo-carastan-santos.github.io/][Danilo Carastan-Santos]]: danilo.carastan-dos-santos@inria.fr
+- [[https://www.linkedin.com/in/kevi-eniko/][Enikő Kevi]]: eniko.kevi@univ-grenoble-alpes.fr
 
 * Course objectives
 You will be training the following skills by following this course.
 
-** 1. Basic Writing Skills
+** 1. Writing Basic skills
       - *Clarity and Precision:* Develop the ability to convey complex scientific
          concepts with clarity and precision.
       - *Conciseness:* Develop the ability to convey ideas concisely without
@@ -66,6 +63,33 @@ You will be training the following skills by following this course.
         work to an audience
       - *Bad Habits Awareness:* Know common speaking and presentation bad habits
         and critital errors and how to avoid them.
+
+* Course Schedule and Evaluation Process
+** Schedule
+You may find the schedule for all courses in M1 MOSIG at the
+[[https://ade-uga-ro-vs.grenet.fr/direct/index.jsp?data=5e58d6dfb7fba2eadbc98b822b5605b3740ced8a164c508d9e913f703ae44e271acc0d115c463861acfc36b866baffb5d334c10559d5088c20ada3e85f74b6a618f9ce92d9857ec7783739e27d2592fdce5d016527fea8754e9b0d9404c94c20,1][ADE
+Webpage]]. The table below presents a tentative schedule for this course.
+
+| Week | Date       | Content                                               |
+|------+------------+-------------------------------------------------------|
+|    1 | 15/09/2023 | Course presentation and tools for scientific writing  |
+|    2 | 22/09/2023 | Writing clear and concise text                        |
+|    3 | 29/09/2023 | Writing a research methodology                        |
+|    4 | 06/10/2023 | Writing scientific results                            |
+|    5 | 13/10/2023 | Wrapping up a conclusion                              |
+|    6 | 20/10/2023 | Writing an introduction                               |
+|    7 | 27/10/2023 | Writing an Abstract and a Title                       |
+|    8 | 10/11/2023 | Mid-term exam                                         |
+|    9 | 17/11/2023 | Presenting scientific content (speaking)              |
+|   10 | 24/11/2023 | Preparing good slides and practicing the presentation |
+|   11 | 01/12/2023 | Hands-on student presentations                        |
+
+** Evaluation Process
+1. *Mid-term exam (MT):* 50%
+2. *Student presentations (SP):* 40%
+3. *Attendance to the classes: (ATT)* 10%
+
+*Final Grade =* 0.5*MT + 0.1*ATT + 0.4*SP
 
 * References
 - Alley, M. (2018). The Craft of Scientific Writing. Springer New
