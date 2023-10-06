@@ -1,0 +1,75 @@
+\documentclass[a4paper]{article}
+% Setup margins
+\usepackage{geometry}
+\geometry{
+    textwidth=0.76\paperwidth,
+    textheight=0.76\paperheight
+}
+
+% Math packages
+\usepackage{bm}
+\usepackage{amsfonts}
+\usepackage{bbm}
+\usepackage{mathtools}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Second algorithm package with different look and settings
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmiccomment}[1]{\hfill  {\small  \tt \# #1}}
+
+% Define some math commands
+\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\pred}{\texttt{pred}}
+\newcommand{\one}{\ensuremath{\mathds{1}}}
+
+\begin{document}
+
+\begin{algorithm}[!ht]
+	\begin{algorithmic}[1]
+	\STATE Initially, set $A^* \gets \emptyset$ \ \ \texttt{(where $A^*$ is the solution set and $\forall e \in A^* : x_{e} = 1$)}
+	\STATE All primal and dual variables are initially set to 0
+	\STATE During every step, for each feasible solution $S$, $z_{S} = \prod_{e \in S} x_{e} \prod_{e \notin S} (1 - x_{e})$ is maintained.
+	\STATE Let $\tau$ be the continuous timer during the execution of the algorithm.
+	\FOR{each time $t$, for the new primal constraint $\sum_{e} a_{e}^{t} x_{e} \geq 1$
+	and dual variable $\alpha^{t}_{A^*}$}
+		\WHILE[\texttt{Increase primal, dual variables}]{$\sum_{e \notin A^{*}} b^{t}_{e}(A^{*})\ x_{e} < 1$}
+			\STATE Increase $\tau$ with a rate of $1$.
+			\STATE Increase $\alpha^{t}_{A^{*}}$ at rate $1\ /\ (\lambda \ \ln(1+2d^{2}/\eta))$
+			%(Note that $c_{k,A^{*}} > 0$ by the condition of the while loop.)
+			\label{algo-covering:alpha}
+			\FOR{$e \notin A^{*}$ such that $b^{t}_{e}(A^{*}) > 0$}
+				\STATE \textbf{if} $\beta_{e} <  \frac{1}{\lambda} \nabla_{e} F(\vect{x})$ \textbf{then}
+				$\beta_{e} \gets \frac{1}{\lambda} \nabla_{e} F(\vect{x})$
+				\label{algo-covering:beta}
+				\STATE Increase $x_{e}$ at a rate according to the following
+				\begin{align*}
+					\frac{\partial x_{e}}{\partial \tau}	\gets
+					\frac{b^{t}_{e}(A^{*}) \ x_{e}}{\lambda \beta_{e}} + \frac{\eta}{\lambda \beta_{e} d}
+					+ \frac{(1 - \eta) \cdot \one_{\{\pred(x_{e}) = 1\}}}{\nabla_{e} F(\vect{x}) \cdot |\{e': \pred(x_{e'}) = 1,\ b^{t}_{e'}(A^{*}) > 0\}| }
+				\end{align*}
+				\label{algo-covering:x}
+			\ENDFOR
+			\STATE \textbf{if} $x_{e} = 1$ \textbf{then} $A^{*} \gets A^{*} \cup \{e\}$
+			\FOR[\texttt{Decrease dual variables}]{$e : e \notin A^*$} \label{algo-decrease}
+				\WHILE{
+					$\sum_{t'=1}^{t} \sum_{A: e \notin A} b^{t'}_{e}(A) \ \alpha^{t'}_{A} > \beta_{e}$}
+						\FOR{$(t_{e}^{*}, A) \textnormal{ such that } b^{t_{e}^{*}}_{e}(A) =  \max \{b^{t'}_{e}(A)\ |\ \forall A: e \notin A \textnormal{ and }\forall t' \leq t \textnormal{ s.t. } \alpha^{t'}_{A} > 0\}$} \label{algo-covering:bmax}
+							\STATE Decrease $\alpha^{t_{e}^{*}}_{A}$ continuously with a rate of
+							$\frac{b^{t}_{e}(A^{*})}{b^{t_{e}^{*}}_{e}(A)} \cdot\frac{1}{\lambda \cdot \ln(1+2d^{2}/\eta)}$
+							\label{algo-covering:decrease}
+					\ENDFOR
+				\ENDWHILE
+			\ENDFOR
+		\ENDWHILE
+	\ENDFOR
+	\end{algorithmic}
+	\caption{Online Algorithm for Non-Linear Covering Problems.}
+	\label{algo:covering}
+\end{algorithm}
+
+\end{document}

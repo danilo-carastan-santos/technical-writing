@@ -1,0 +1,165 @@
+\documentclass[a4paper]{article}
+% Setup margins
+\usepackage{geometry}
+\geometry{
+    textwidth=0.76\paperwidth,
+    textheight=0.76\paperheight
+}
+
+% Frame a block in the text
+\usepackage{mdframed}
+
+% Math packages
+\usepackage{bm}
+\usepackage{amsfonts}
+\usepackage{bbm}
+\usepackage{mathtools}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amssymb}
+
+% Setup the style for your theorems
+\newenvironment{proof}{\noindent\emph{Proof\ }}{\hspace*{\fill}$\Box$\medskip}
+\newenvironment{claimproof}{\noindent\emph{Proof of claim\ }}{\hspace*{\fill}$\Box$\medskip}
+\newenvironment{plainproof}{\noindent\emph{Proof\ }}{}
+\newtheorem{theorem}{Theorem}
+\newtheorem{definition}{Definition}
+\newtheorem{lemma}{Lemma}
+\newtheorem{claim}{Claim}
+\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}
+
+% Define some math commands
+\newcommand{\vect}[1]{\ensuremath{\mathbf{#1}}}
+\newcommand{\pred}{\texttt{pred}}
+\newcommand{\one}{\ensuremath{\mathds{1}}}
+
+% Let's you split fractions nicely in text (sfrac in text)
+\usepackage{xfrac}
+
+% Give compactenum
+\usepackage{paralist}
+
+% Gives the spacing at the notation section
+\usepackage{colortbl}
+
+
+\begin{document}
+
+\begin{figure}
+\begin{mdframed}
+    \begin{align*}
+		&& \min \sum_{i=1}^{n} c_{i} x_{i}^{T} &= \min \sum_{i=1}^{n} c_{i} \sum_{t=1}^{T}\bigl( x_{i}^{t} - x_{i}^{t-1}\bigr)\\
+    \text{subject to} &&
+		\sum_{k=1}^{K} w_{k}^{t} &= 1  && \forall\ t \\
+		%
+		&& x_{i}^{t} &\geq \sum_{k=1}^{K} w_{k}^{t} s_{i,k}^{t} && \forall\ i, t\\
+		%
+		&& x_{i}^{t} &\geq x_{i}^{t-1} && \forall\ i, t\\
+		%
+		&& w_{k}^{t} &\geq 0  && \forall\ t, k
+    \end{align*}
+    where $1 \leq t \leq T$ and $1 \leq i \leq n$.
+    \vspace{5pt}
+\end{mdframed}
+\caption{Formulation of the \texttt{LIN-COMB} benchmark}
+\label{fig:benchmark}
+\end{figure}
+
+\clearpage
+
+\begin{theorem} \label{covering-theorem}
+The algorithm's cost is at most $O(\ln(K \rho))$-competitive in the \texttt{LIN-COMB} benchmark.
+\end{theorem}
+%
+\begin{proof} Lemma 1 proved that our algorithm creates feasible solutions for the dual problem of the \texttt{LIN-COMB} benchmark relaxation and for the original covering problem. We show that the algorithm's solution increases the primal objective value of the original covering problem by at most $O(\ln(K \rho))$ times the value of the dual solution, which serves as the lower bound on the \texttt{LIN-COMB} benchmark - the best linear combination of the experts' solutions.
+\begin{align}
+	 \sum_{i=1}^{n} &c_{i} (x_{i}^{t} - x_{i}^{t-1})
+		= \frac{1}{\ln(K\rho)} \sum_{i: x_{i}^{t} > x_{i}^{t-1}} c_{i}(x_{i}^{t} - x_{i}^{t-1}) &&  \notag \\
+		%
+		&\leq \sum_{i: x_{i}^{t} > x_{i}^{t-1}} c_{i}(x_{i}^{t} + \delta_{i}^{t}) \ln \frac{x_{i}^{t-1} + \delta_{i}^{t}}{x_{i}^{t-1} + \delta_{i}^{t}} \\
+		%
+		&\leq \sum_{i: x_{i}^{t} > x_{i}^{t-1}} c_{i} (x_{i}^{t} + \delta_{i}^{t}) \ln \frac{x_{i}^{t-1} + \delta_{i}^{t}}{x_{i}^{t-1} + \delta_{i}^{t-1}} \\
+		%
+		&= \sum_{i: x_{i}^{t} > x_{i}^{t-1}} c_{i} \left[ \left(\sum_{k=1}^{K}  s_{i,k}^{t} w_{i,k}^{t} + \frac{1}{K} \sum_{k=1}^{K} s_{i,k}^{t} \right)
+			\ln \left(\frac{ \sum_{k=1}^{K}  s_{i,k}^{t} w_{i,k}^{t} + \delta_{i}^{t}}{x_{i}^{t-1} + \delta_{i}^{t-1}}  \right) \right] \\
+%
+&\leq \sum_{i: x_{i}^{t} > x_{i}^{t-1}} c_{i} \left[ \left(\sum_{k=1}^{K}  s_{i,k}^{t} w_{i,k}^{t} + \frac{1}{K} \sum_{k=1}^{K} s_{i,k}^{t} \right)
+			\ln \left(\frac{ \sum_{k=1}^{K}  s_{i,k}^{t} w_{i,k}^{t} + \delta_{i}^{t}}{\sum_{k=1}^{K}  s_{i,k}^{t-1} w_{i,k}^{t-1} + \delta_{i}^{t-1}}  \right) \right]\\
+%
+	&= \sum_{i: x_{i}^{t} > x_{i}^{t-1}} \sum_{k=1}^{K} (w_{i,k}^{t} + 1/K) c_{i} s_{i,k}^{t}
+				\ln \left(\frac{ \sum_{k=1}^{K} s_{i,k}^{t} w_{i,k}^{t}  + \delta_{i}^{t}}{\sum_{k=1}^{K}  s_{i,k}^{t-1} w_{i,k}^{t-1}  + \delta_{i}^{t-1}}  \right) \notag \\
+%
+%\end{align}
+%%
+%\begin{align}
+%
+&=  \sum_{i: x_{i}^{t} > x_{i}^{t-1}} \sum_{k=1}^{K} (w_{i,k}^{t} + 1/K) \biggl( a_{i}^{t} \hat{s}_{i,k}^{t} \gamma^t + \lambda_{i}^{t} \biggr) \\
+%
+%
+&\leq \sum_{i=1}^{n} \sum_{k=1}^{K} (w_{i,k}^{t} + 1/K) \biggl( a_{i}^{t} \hat{s}_{i,k}^{t} \gamma^t + \lambda_{i}^{t} \biggr) \notag \\
+%
+&= \sum_{i=1}^{n} a_{i}^{t} \biggl(\sum_{k=1}^{K} w_{i,k}^{t} \hat{s}_{i,k}^{t} \biggr) \gamma^t + \sum_{i=1}^{n} \bigg( \sum_{k=1}^{K} w_{i,k}^{t} \biggr) \lambda_{i}^{t}
++ \frac{1}{K}  \sum_{k=1}^{K} \biggl( \sum_{i=1}^{n} a_{i}^{t}  \hat{s}_{i,k}^{t}  \biggr) \gamma^t + \frac{1}{K} \sum_{k=1}^{K} \sum_{i=1}^{n} \lambda_{i}^{t} 		\notag \\
+%
+&= 2 \gamma^{t} + 2\sum_{i=1}^{n} \lambda_{i}^{t} = \ln(K \rho) \alpha^{t}
+\end{align}
+%
+The above corresponding transformations hold since:
+\begin{compactenum}[(1)]
+	\setcounter{enumi}{1}
+	\item follows from the inequality $a - b \leq a \ln(\sfrac{a}{b})$ for all $0 < b \leq a$;
+	\item holds since $\delta_{i}^{t} \geq \delta_{i}^{t-1}$ (because $s_{i,k}^{t} \geq s_{i,k}^{t-1}$ for all $i,k,t$);
+	\item is valid because $x_{i}^{t} > x_{i}^{t-1}$, so $x_{i}^{t} = \sum_{k=1}^{K}  s_{i,k}^{t} w_{i,k}^{t}$;
+	\item is by the design of the algorithm: $x_{i}^{t-1} \geq \sum_{k=1}^{K}  s_{i,k}^{t-1} w_{i,k}^{t-1}$;
+	\setcounter{enumi}{5}
+	\item since given that $x_{i}^{t} > x_{i}^{t-1} \geq 0$
+	(so $\sum_{k=1}^{K}  s_{i,k}^{t} w_{i,k}^{t} = x_{i}^{t} > 0$), the KKT condition applies;
+	\item is true due to the complementary slackness conditions
+		and that $\sum_{i=1}^{n} a_{i}^{t}  \hat{s}_{i,k}^{t} = 1$.
+\end{compactenum}
+\end{proof}
+
+\clearpage
+
+\section{Signal Temporal Logic}
+
+\subsection{Notation}
+
+\begin{center}
+\begin{tabular}{ m{15em}  m{22em} } 
+$V = \{x_1, x_2, ... , x_n\}$ & Current state of the model as a set of variables \\
+$\mathbbm{D} = \mathbbm{D}_1 \times \mathbbm{D}_2 \times ... \times \mathbbm{D}_n$ & Domain of $V$ \\
+$\mathbbm{T} = \mathbbm{R}_{\geq 0}$ & Time set\\
+$\mathbbm{B} = \{-1, +1\}$ & Boolean set \\
+\\
+$w: \mathbbm{T} \mapsto \mathbbm{D}$ & A signal $w$\\
+$M = \{\mu_1, \mu_2, ... , \mu_k\}$ & Booleanizers $\mu_j: \mathbbm{R}^n \mapsto \mathbbm{B}$\\
+\\
+$\varphi$ & STL formula \\
+$(w, t) \models \varphi$ & The signal $w$ satisfies the STL formula $\varphi$ at time $t$\\
+$\chi(\mu, w, t)$ & Characteristic function\\
+\\
+$\mathcal{I} \subset \mathbbm{T}$ & Time interval (open or closed) as $(i_1, i_2)$ and $i_1 < i_2$\\
+$t + \mathcal{I} = \{t + t'\ |\ t' \in \mathcal{I}\}$ & Time interval window from a given time $t$\\
+\\
+$\mathcal{U}_\mathcal{I}$ & Until operator with interval $\mathcal{I}$\\
+$\bigcirc_\mathcal{I}$ & Next operator with interval $\mathcal{I}$\\
+$\lozenge_\mathcal{I}$ & Eventually operator with interval $\mathcal{I}$\\
+$\square_\mathcal{I}$ & Always operator with interval $\mathcal{I}$\\
+\end{tabular}
+\end{center}
+
+\subsection{Events}
+
+\begin{center}
+\begin{equation} 
+\textnormal{NextEvent}(z,r_k) = \left\{
+\begin{array}{ll}
+\infty\ \textnormal{if}\ (z, \delta z)\ \textnormal{is continuous for}\ r > r_k \\
+\min\{r > r_k\ |\ (z[r^-], \delta z[r^-]) \ne (z[r^+], \delta z[r^+])\}\ \textnormal{otherwise}
+\end{array}
+\right.
+\end{equation} 
+\end{center}
+\end{document}

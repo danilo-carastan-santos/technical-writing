@@ -1,0 +1,55 @@
+\documentclass[a4paper]{article}
+% Setup margins
+\usepackage{geometry}
+\geometry{
+    textwidth=0.76\paperwidth,
+    textheight=0.76\paperheight
+}
+
+% Math packages
+\usepackage{bm}
+\usepackage{amsfonts}
+\usepackage{bbm}
+\usepackage{mathtools}
+
+% Algorithm package with some options
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+
+% Let's you split fractions nicely in text
+\usepackage{xfrac}
+
+% Can be useful to make space efficient lists
+\newenvironment{packed_enum}{
+\begin{itemize}
+  \setlength{\itemsep}{1pt}
+  \setlength{\parskip}{0pt}
+  \setlength{\parsep}{0pt}
+  \setlength{\topsep}{0pt}
+}{\end{itemize}}
+
+\begin{document}
+
+\begin{algorithm}[ht]
+\DontPrintSemicolon
+Initialize the variables and the level sets\\
+\For{each new item $j$} {
+    Let $i^*$ be the predicted buyer of item $j$, formally, $pred(j) = i^*$\\
+    \While{there exists $i \in S_{j}$ who spends less than $\eta$ fraction of its budget}{
+    Continuously allocate fractions of $j$ to buyers on the lowest levels \tcp*{Stage 1}
+    }
+    \textnormal{ \\}
+    \Repeat{either: \begin{packed_enum}
+        \item $(1-\eta)$ fraction has been allocated to $i^{*}$
+        \item or $j$ is completely sold
+        \item or $i^{*}$ exhausted its budget
+    \end{packed_enum}}
+    {Continuously allocate fractions of $j$ to $i^{*}$ \tcp*{Stage 2}}
+    \While{there exists $i \in S_{j}$ with non-exhausted budget and $j$ is not completely sold} {
+    Continuously allocate fractions of $j$ to buyers on the lowest levels \tcp*{Stage 3}
+    }
+}
+\caption{Algorithm with Prediction for the Bounded Allocation Problem.}
+\label{algo}
+\end{algorithm}
+
+\end{document}
