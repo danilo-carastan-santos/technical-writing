@@ -79,9 +79,9 @@ Webpage]]. The table below presents a tentative schedule for this course.
 |    5 | 13/10/2023 | Wrapping up a conclusion                              |
 |    6 | 20/10/2023 | Writing an introduction                               |
 |    7 | 27/10/2023 | Writing an Abstract and a Title                       |
-|    8 | 10/11/2023 | Mid-term exam                                         |
-|    9 | 17/11/2023 | Presenting scientific content (speaking)              |
-|   10 | 24/11/2023 | Preparing good slides and practicing the presentation |
+|    8 | 10/11/2023 | Preparing good slides and practicing the presentation |
+|    9 | 17/11/2023 | Mid-term exam                                         |
+|   10 | 24/11/2023 | Presenting scientific content (speaking)              |
 |   11 | 01/12/2023 | Hands-on student presentations                        |
 
 ** Evaluation Process
