@@ -40,10 +40,10 @@ The table below presents a tentative schedule for this course.
 
 ** Evaluation Process
 1. *Mid-term exam (MT):* 50%
-2. *Student presentations (SP):* 40%
+2. *Mid-report + Student presentations (RP):* 40%
 3. *Attendance to the classes: (ATT)* 10%
 
-*Final Grade =* 0.5*MT + 0.1*ATT + 0.4*SP
+*Final Grade =* 0.5*MT + 0.1*ATT + 0.4*RP
 
 ** About plagiarism
 The final report will be checked by a plagiarism detection system. Any detected
