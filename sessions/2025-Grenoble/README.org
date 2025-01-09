@@ -1,0 +1,58 @@
+#+TITLE: M1 MOSIG and M1 CODAS - Technical Wrtiting and Speaking in English - 2024-2025 session
+
+* About
+This page holds the material used for the course Technical Writing and Speaking
+in English of the [[https://mosig.imag.fr/][M1 MOSIG]] at
+[[https://im2ag.univ-grenoble-alpes.fr/en/][University Grenoble Alpes]] during
+the 2024-2025 session.
+
+* Teachers
+- [[https://danilo-carastan-santos.github.io/][Danilo Carastan-Santos]]: danilo.carastan-dos-santos@univ-grenoble-alpes.fr
+- [[https://www.linkedin.com/in/kevi-eniko/][Enikő Kevi]]: eniko.kevi@univ-grenoble-alpes.fr
+
+* Aknowledgement
+We would like to thank Susan Sinclair (UGA/UFR Langues Etrangères) for providing content to improve the course.
+
+* Course objectives
+The course aims to help the student with the following skills:
+- Develop the ability to create well-formatted documents using LaTeX
+- Understand the basic structure of a scientific document and its writing conventions
+- Develop writing techniques to write clear, convincing, and energetic scientific documents
+- Be more comfortable when presenting scientific content to an audience
+
+* Course Schedule and Evaluation Process
+** Schedule
+The table below presents a tentative schedule for this course.
+
+| Week | Date       | Content                                                            |
+|------+------------+--------------------------------------------------------------------|
+|    1 | 29/01/2025 | Course presentation and tools for scientific writing               |
+|    2 | 05/02/2025 | Structure of a research article and formulating research questions |
+|    3 | 12/02/2025 | Writing an introduction                                            |
+|    4 | 19/02/2025 | Reviewing previous research: related work                          |
+|    5 | 26/02/2025 | Writing a scientific methodology                                   |
+|    6 | 12/03/2025 | Writing scientific results                                         |
+|    7 | 19/03/2025 | Writing a scientific discussion and conclusion                     |
+|    8 | 26/03/2025 | Writing an Abstract and a Title                                    |
+|    9 | 02/04/2025 | Writing with style + Mid-term exam                                 |
+|   10 | 09/04/2025 | Presenting scientific content (speaking)                           |
+|   11 | 16/04/2025 | Hands-on student presentations (three-minute madness)              |
+
+** Evaluation Process
+1. *Mid-term exam (MT):* 50%
+2. *Student presentations (SP):* 40%
+3. *Attendance to the classes: (ATT)* 10%
+
+*Final Grade =* 0.5*MT + 0.1*ATT + 0.4*SP
+
+** About plagiarism
+The final report will be checked by a plagiarism detection system. Any detected
+plagiarism will trigger administrative sanctioning procedures.
+
+* References
+- Alley, M. (2018). The Craft of Scientific Writing. Springer New
+  York. https://doi.org/10.1007/978-1-4419-8288-9
+
+- Alley, M. (2013). The Craft of Scientific Presentations: Critical Steps to
+  Succeed and Critical Errors to Avoid. Springer New
+  York. https://doi.org/10.1007/978-1-4419-8279-7
