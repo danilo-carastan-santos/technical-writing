@@ -8,7 +8,6 @@ the 2024-2025 session.
 
 * Teachers
 - [[https://danilo-carastan-santos.github.io/][Danilo Carastan-Santos]]: danilo.carastan-dos-santos@univ-grenoble-alpes.fr
-- [[https://www.linkedin.com/in/kevi-eniko/][Enikő Kevi]]: eniko.kevi@univ-grenoble-alpes.fr
 
 * Aknowledgement
 We would like to thank Susan Sinclair (UGA/UFR Langues Etrangères) for providing content to improve the course.
@@ -40,10 +39,9 @@ The table below presents a tentative schedule for this course.
 
 ** Evaluation Process
 1. *Mid-term exam (MT):* 50%
-2. *Mid-report + Student presentations (RP):* 40%
-3. *Attendance to the classes: (ATT)* 10%
+2. *Mid-report + Student presentations (RP):* 50%
 
-*Final Grade =* 0.5*MT + 0.1*ATT + 0.4*RP
+*Final Grade =* 0.5*MT + 0.5*RP
 
 ** About plagiarism
 The final report will be checked by a plagiarism detection system. Any detected
